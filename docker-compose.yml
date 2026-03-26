@@ -1,0 +1,46 @@
+services:
+  app:
+    build: .
+    container_name: decodle_app
+    working_dir: /app
+    volumes:
+      - ./:/app
+    ports:
+      - "8000:8000"
+    networks:
+      - decodle
+    depends_on:
+      - db
+    environment:
+      - DB_CONNECTION=pgsql
+      - DB_HOST=db
+      - DB_PORT=5432
+      - DB_DATABASE=decodle
+      - DB_USERNAME=postgres
+      - DB_PASSWORD=capichef1234
+
+  db:
+    image: postgres:16-alpine
+    container_name: decodle_db
+    environment:
+      POSTGRES_DB: decodle
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: capichef1234
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - decodle
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+networks:
+  decodle:
+    driver: bridge
+
+volumes:
+  postgres_data:
