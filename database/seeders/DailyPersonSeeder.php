@@ -22,7 +22,7 @@ class DailyPersonSeeder extends Seeder
 
         DailyPerson::updateOrCreate(
             ['person_id' => 1],
-            ['game_type' => GameType::CLASSIC->value, 'date' => now()->toDateString()],
+            ['game_type' => GameType::PHOTO->value, 'date' => now()->toDateString()],
         );
     }
 }

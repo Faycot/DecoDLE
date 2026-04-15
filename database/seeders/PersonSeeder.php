@@ -13,7 +13,7 @@ class PersonSeeder extends Seeder
             [
                 'first_name' => 'Enzo',
                 'last_name' => 'Moita',
-                'photo_path' => 'photos/Enzo.jpg',
+                'photo_path' => 'photos/Enzo.png',
                 'description' => 'Passionné de course à pied.',
                 'class' => '3A Dev',
                 'gender' => 'Homme',
@@ -27,7 +27,7 @@ class PersonSeeder extends Seeder
             [
                 'first_name' => 'Axel',
                 'last_name' => 'Barbellion',
-                'photo_path' => 'photos/Axel.jpg',
+                'photo_path' => 'photos/Axel.png',
                 'description' => 'Quasiment plus rien sur le caillou',
                 'class' => '3A Dev',
                 'gender' => 'Homme',
