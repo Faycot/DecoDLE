@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('class')->nullable();
             $table->string('gender');     
             $table->integer('age');        
-            $table->string('height');              
+            $table->unsignedSmallInteger('height');              
             $table->string('hair_color');         
             $table->string('city');               
             $table->string('hobby');     

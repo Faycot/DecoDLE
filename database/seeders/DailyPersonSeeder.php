@@ -10,23 +10,20 @@ class DailyPersonSeeder extends Seeder
 {
     public function run(): void
     {
-        DailyPerson::create([
-            'person_id' => 1,
-            'game_type' => GameType::CLASSIC->value,
-            'date' => now()->toDateString(),
-        ]);
+        DailyPerson::updateOrCreate(
+            ['game_type' => GameType::CLASSIC->value, 'date' => now()->toDateString()],
+            ['person_id' => 1],
+        );
 
-        DailyPerson::create([
-            'person_id' => 2,
-            'game_type' => GameType::DESCRIPTION->value,
-            'date' => now()->toDateString(),
-        ]);
+        DailyPerson::updateOrCreate(
+            ['game_type' => GameType::DESCRIPTION->value, 'date' => now()->toDateString()],
+            ['person_id' => 2],
+        );
 
-        DailyPerson::create([
-            'person_id' => 1,
-            'game_type' => GameType::PHOTO->value,
-            'date' => now()->toDateString(),
-        ]);
+        DailyPerson::updateOrCreate(
+            ['person_id' => 1],
+            ['game_type' => GameType::CLASSIC->value, 'date' => now()->toDateString()],
+        );
     }
 }
 
