@@ -14,11 +14,14 @@ return new class extends Migration
             $table->string('last_name');
             $table->string('photo_path')->nullable();
             $table->text('description')->nullable();
-            $table->string('promo');              
-            $table->string('gender');             
+            $table->string('class')->nullable();
+            $table->string('gender');     
+            $table->integer('age');        
+            $table->unsignedSmallInteger('height');              
             $table->string('hair_color');         
             $table->string('city');               
-            $table->string('hobby');              
+            $table->string('hobby');     
+            $table->string('specialization');         
             $table->timestamps();
         });
     }
